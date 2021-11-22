@@ -19,12 +19,13 @@ spec:
         - containerPort: 3000
         env:
           - name: EXAMPLE
-            value: defined in kubernetes
+            value: defined in kubernetes yml
+          - name: REDIS_URL
+            value: redis
+          - name: REDIS_PORT
+            value: "6379"
           - name: RAILS_MASTER_KEY
             valueFrom:
               secretKeyRef:
                 name: rails-secrets
                 key: rails_master_key
-        envFrom:
-          - configMapRef:
-              name: env
