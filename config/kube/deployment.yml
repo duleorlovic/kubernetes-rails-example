@@ -25,3 +25,6 @@ spec:
               secretKeyRef:
                 name: rails-secrets
                 key: rails_master_key
+        envFrom:
+          - configMapRef:
+              name: env
